@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>表示</title>
+  </head>
+  <body>
+    <% @res.each do |row| %>
+      <p><%= row['id'] %></p>
+      <p><%= row['sample_text'] %></p>
+      <p><%= row['creater_name'] %></p>
+      <p><%= row['date_info_conv'] %></p>
+
+      <% if row['img_path'] != nil %>
+        <div>
+          <img src="/upimgs/<%= row['img_path'] %>">
+        </div>
+      <% end %>
+    <% end %>
+  </body>
+</html>
